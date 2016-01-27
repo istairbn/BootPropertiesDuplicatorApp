@@ -1,0 +1,3 @@
+dev.europe.Forwarder
+dev.asia.Forwarder
+uat.europe.application.Forwarder
