@@ -11,8 +11,9 @@
 import java.io.File.*
 import java.nio.file.*
 
+def targetfile= args.length > 0 ? args[0] : "roles.txt"
 def sourceprops = new File("./Input/boot.properties")
-def roles = new File("./Input/roles.txt")
+def roles = new File("./Input/" + targetfile)
 def outputFolder = "./Output/"
 def stamp = new Date()
 
@@ -33,6 +34,7 @@ def fileText = sourceprops.text
 def original = "-Dagent.role=[A-Za-z0-0.]+"
 
 roles.eachLine{ line ->
+    line = line.trim()
     def replacement = "-Dagent.role=$line"
     println "$stamp, $replacement"
     fileText = (fileText =~ original).replaceFirst(replacement)
