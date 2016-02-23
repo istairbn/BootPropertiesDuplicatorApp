@@ -31,7 +31,7 @@ else{
 }
 
 def fileText = sourceprops.text
-def original = "-Dagent.role=[A-Za-z0-0.]+"
+def original = "-Dagent.role=[A-Za-z0-9.]+"
 
 roles.eachLine{ line ->
     line = line.trim()
